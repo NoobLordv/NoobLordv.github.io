@@ -1,49 +1,127 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#082ca5">
-<meta name="description" content="Portal oficial de Quequenlandia. Símbolos, instituciones, historia y cultura nacional.">
-<title>Quequenlandia — Portal Nacional</title>
+<meta name="description" content="Portal nacional de Quequenlandia: historia, territorio, símbolos, instituciones y cultura quequense.">
+<title>Quequenlandia | Portal Nacional</title>
+<link rel="icon" href="escudo.svg" type="image/svg+xml">
 <style>
-:root{--blue:#082ca5;--gold:#f5c400;--ink:#10131d;--paper:#fffefa;--muted:#606879}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6}
-header{background:var(--blue);color:white;padding:18px max(5vw,22px);display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:5;box-shadow:0 5px 22px #061b6840}
-.brand{font-weight:900;letter-spacing:.08em;text-transform:uppercase}.brand span{color:var(--gold)}nav{display:flex;gap:22px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-size:.9rem;font-weight:650}nav a:hover{color:var(--gold)}
-.hero{background:linear-gradient(130deg,#061c79,#0d38c5);color:white;padding:66px max(5vw,22px) 74px;text-align:center}.hero img{width:min(100%,720px);height:auto;border:5px solid white;box-shadow:0 20px 55px #0005;border-radius:4px}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:.22em;text-transform:uppercase;font-size:.75rem;margin:28px 0 6px}.hero h1{font-size:clamp(2.4rem,7vw,5rem);line-height:1.02;margin:8px 0 14px;letter-spacing:-.04em}.hero p{max-width:680px;margin:0 auto;color:#e6ebff;font-size:1.08rem}
-main{max-width:1100px;margin:auto;padding:30px 22px 80px}.section{padding:48px 0;border-bottom:1px solid #e5e7ed}.section h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:0 0 12px;letter-spacing:-.03em}.kicker{color:#1742bd;font-size:.75rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase}.lead{font-size:1.08rem;color:#444d5d;max-width:780px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}.tile{background:white;border:1px solid #e5e7ed;border-top:4px solid var(--blue);padding:22px;border-radius:8px}.tile h3{margin:0 0 8px}.tile p{margin:0;color:var(--muted)}.symbol{font-size:2rem;color:var(--blue);font-weight:900}
-audio{width:100%;margin:18px 0}.anthem{background:#f1f4ff;border:1px solid #dbe3ff;border-radius:10px;padding:24px;max-width:760px}.anthem strong{display:block;font-size:1.2rem}.anthem small{color:var(--muted)}
-footer{background:#071d70;color:#e8edff;padding:30px max(5vw,22px);text-align:center}footer strong{color:var(--gold)}footer p{margin:4px}
-@media(max-width:650px){header{position:static;display:block}nav{margin-top:12px;gap:12px}.hero{padding-top:40px}.section{padding:34px 0}}
+:root{--blue:#082ca5;--deep:#06165c;--gold:#f5c400;--ink:#101525;--paper:#fbfcff;--muted:#667085;--line:#e4e8f2;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+a{color:inherit}header{position:sticky;top:0;z-index:20;background:#071d70;color:white;padding:12px max(4vw,20px);display:flex;align-items:center;justify-content:space-between;gap:22px;box-shadow:0 8px 28px #06174730}.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap}.brand img{width:38px;height:38px}.brand span{color:var(--gold)}nav{display:flex;align-items:center;justify-content:flex-end;gap:18px;flex-wrap:wrap}nav a{text-decoration:none;color:#f4f6ff;font-size:.85rem;font-weight:700}nav a:hover,nav a:focus{color:var(--gold)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#174bd6 0,#0b2eaa 45%,#06165c 100%);color:white;text-align:center;padding:62px 20px 76px}.hero:after{content:"";position:absolute;inset:auto -10% -180px;height:260px;border-radius:50%;background:#ffffff0b}.hero-flag{display:block;width:min(720px,92vw);height:auto;margin:auto;border:5px solid #fff;border-radius:5px;box-shadow:0 24px 60px #0005}.eyebrow{margin:28px 0 5px;color:var(--gold);font-weight:900;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase}.hero h1{margin:0;font-size:clamp(2.7rem,8vw,5.7rem);line-height:1;letter-spacing:-.055em}.hero p{max-width:720px;margin:18px auto 0;color:#e3eaff;font-size:1.08rem}.hero-tag{display:inline-block;margin-top:26px;border:1px solid #ffffff70;border-radius:99px;padding:7px 16px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+main{max-width:1120px;margin:auto;padding:18px 24px 90px}.section{padding:54px 0;border-bottom:1px solid var(--line)}.section-head{max-width:780px;margin-bottom:24px}.kicker{color:#1742bd;font-size:.73rem;font-weight:950;letter-spacing:.2em;text-transform:uppercase}.section h2{margin:5px 0 10px;font-size:clamp(1.8rem,4vw,2.65rem);line-height:1.15;letter-spacing:-.04em}.lead{font-size:1.06rem;color:#475166;margin:0;max-width:800px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}.tile{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--blue);padding:22px;border-radius:10px;box-shadow:0 8px 24px #10245a08}.tile h3{margin:0 0 7px;font-size:1.05rem}.tile p{margin:0;color:var(--muted)}.symbol{font-size:2rem;font-weight:950;color:var(--blue);line-height:1.2;margin-bottom:10px}.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}.seal{width:min(100%,300px);display:block;margin:auto;filter:drop-shadow(0 12px 20px #10245a18)}.callout{padding:20px 22px;border-left:4px solid var(--gold);background:#fff9df;border-radius:0 9px 9px 0;color:#4b4324}.timeline{display:grid;gap:12px;margin-top:24px}.event{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:17px 0;border-bottom:1px solid var(--line)}.event b{color:var(--blue)}.event p{margin:0;color:var(--muted)}
+.anthem{background:linear-gradient(130deg,#edf2ff,#fff);border:1px solid #d9e2ff;border-radius:12px;padding:26px;max-width:780px}.anthem-title{display:flex;align-items:center;gap:14px}.anthem-title img{width:52px;height:52px}.anthem strong{display:block;font-size:1.2rem}.anthem small{color:var(--muted)}.anthem-audio{display:none}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;color:#1742bd;background:#edf2ff;padding:6px 11px;border-radius:99px}.status:before{content:"";width:7px;height:7px;border-radius:50%;background:#e0a900}
+.document{display:flex;justify-content:space-between;align-items:center;gap:18px}.document strong{font-size:1.05rem}.document span{color:var(--muted);font-size:.88rem}
+footer{background:#06165c;color:#dce5ff;padding:34px 22px;text-align:center}footer img{width:44px;height:44px;vertical-align:middle;margin-bottom:8px}footer strong{color:var(--gold);letter-spacing:.12em}footer p{margin:3px}
+@media(max-width:760px){header{position:relative;display:block}.brand{justify-content:center}nav{justify-content:center;margin-top:12px;gap:10px 15px}.two-col{grid-template-columns:1fr}.event{grid-template-columns:1fr;gap:2px}.section{padding:40px 0}.hero{padding-top:42px}}
 </style>
 </head>
 <body>
-<header><div class="brand">QUEQUE<span>NLANDIA</span></div><nav aria-label="Navegación principal"><a href="#inicio">Inicio</a><a href="#nacion">La nación</a><a href="#simbolos">Símbolos</a><a href="#instituciones">Instituciones</a><a href="#himno">Himno</a><a href="#constitucion">Constitución</a><a href="#noticias">Noticias</a></nav></header>
-<section class="hero" id="inicio"><img src="bandera.svg" alt="Bandera oficial de Quequenlandia"><div class="eyebrow">Portal nacional · Sitio oficial</div><h1>Quequenlandia</h1><p>Una nación, una bandera y una identidad que se construye con historia, cultura y espíritu quequense.</p></section>
+<header>
+  <div class="brand"><img src="escudo.svg" alt=""><span>Quequenlandia</span></div>
+  <nav aria-label="Navegación principal">
+    <a href="#inicio">Inicio</a><a href="#nacion">Nación</a><a href="#historia">Historia</a><a href="#territorio">Territorio</a><a href="#simbolos">Símbolos</a><a href="#gobierno">Gobierno</a><a href="#cultura">Cultura</a><a href="#documentos">Documentos</a><a href="#noticias">Noticias</a>
+  </nav>
+</header>
+<section class="hero" id="inicio">
+  <img class="hero-flag" src="bandera.svg" alt="Bandera nacional de Quequenlandia">
+  <div class="eyebrow">Portal nacional · República de Quequenlandia</div>
+  <h1>Quequenlandia</h1>
+  <p>Una nación, una identidad y una historia compartida. Este es el espacio central de sus símbolos, instituciones y cultura.</p>
+  <div class="hero-tag">Unidad · Identidad · Queque</div>
+</section>
 <main>
-<section class="section" id="nacion"><div class="kicker">01 · Identidad nacional</div><h2>La nación quequense</h2><p class="lead">Quequenlandia es una nación fundada sobre la identidad compartida de su pueblo. Este portal reúne sus símbolos, instituciones y expresiones culturales en un único espacio oficial.</p><div class="grid"><article class="tile"><div class="symbol">Q</div><h3>Nombre oficial</h3><p>Quequenlandia</p></article><article class="tile"><div class="symbol">⚑</div><h3>Lema nacional</h3><p>Unidad, identidad y queque.</p></article><article class="tile"><div class="symbol">★</div><h3>Capital</h3><p>Capital nacional — sede de las instituciones quequenses.</p></article></div></section>
-<section class="section" id="simbolos"><div class="kicker">02 · Emblemas</div><h2>Símbolos nacionales</h2><p class="lead">La bandera de Quequenlandia expresa la identidad nacional mediante sus colores y emblemas.</p><div class="grid"><article class="tile"><h3>Azul</h3><p>Representa la grandeza.</p></article><article class="tile"><h3>Blanco</h3><p>Representa a los habitantes y la pureza.</p></article><article class="tile"><h3>Sol dorado</h3><p>Representa la prosperidad.</p></article><article class="tile"><h3>Corona y laureles</h3><p>La Q coronada representa la soberanía; los laureles expresan la superioridad geopolítica.</p></article></div></section>
-<section class="section" id="instituciones"><div class="kicker">03 · Organización</div><h2>Instituciones de Quequenlandia</h2><p class="lead">La organización nacional se presenta en sus principales áreas institucionales. Los nombres y autoridades podrán ampliarse mediante futuras disposiciones oficiales.</p><div class="grid"><article class="tile"><h3>Gobierno nacional</h3><p>Representación y conducción de los asuntos de Estado.</p></article><article class="tile"><h3>Constitución</h3><p>Marco fundamental para establecer derechos, deberes y organización institucional.</p></article><article class="tile"><h3>Cultura y patrimonio</h3><p>Protección de los símbolos, tradiciones y memoria quequense.</p></article></div></section>
-<section class="section" id="himno"><div class="kicker">04 · Cultura nacional</div><h2>Himno de Queque</h2><p class="lead">La expresión musical de la identidad quequense.</p><div class="anthem"><strong>Himno de Queque</strong><small>Grabación original · duración aproximada: 2:17</small><audio id="anthemAudio" autoplay loop preload="auto"><source src="Himno%20del%20queque.mp3" type="audio/mpeg">Tu navegador no puede reproducir audio HTML5.</audio><small id="audioStatus">Volumen 50% · reproducción continua. Si tu navegador bloquea el inicio automático, tocá cualquier parte de la página una vez.</small></div></section>
-<section class="section" id="constitucion"><div class="kicker">05 · Marco jurídico</div><h2>Constitución nacional</h2><p class="lead">La sección constitucional queda reservada para el texto aprobado de la Constitución de Quequenlandia. El articulado todavía no fue incorporado a este portal.</p></section><section class="section" id="noticias"><div class="kicker">06 · Comunicados</div><h2>Noticias nacionales</h2><div class="tile"><h3>Portal nacional inaugurado</h3><p>Se publica la primera versión del sitio institucional de Quequenlandia.</p></div></section></main>
-<footer><p><strong>QUEQUENLANDIA</strong> · Portal nacional</p><p>Identidad, soberanía y cultura quequense.</p></footer>
+<section class="section" id="nacion">
+  <div class="section-head"><div class="kicker">01 · Identidad nacional</div><h2>Una nación con identidad propia</h2><p class="lead">Quequenlandia reúne bajo una misma identidad a su comunidad, sus símbolos y sus instituciones. Este portal funciona como punto de referencia para la información nacional y sus futuras disposiciones.</p></div>
+  <div class="grid">
+    <article class="tile"><div class="symbol">Q</div><h3>Nombre oficial</h3><p>Quequenlandia</p></article>
+    <article class="tile"><div class="symbol">⚑</div><h3>Lema nacional</h3><p>Unidad, identidad y queque.</p></article>
+    <article class="tile"><div class="symbol">✦</div><h3>Identidad quequense</h3><p>Una comunidad representada por sus emblemas y tradiciones.</p></article>
+  </div>
+</section>
+<section class="section" id="historia">
+  <div class="section-head"><div class="kicker">02 · Memoria nacional</div><h2>Historia de Quequenlandia</h2><p class="lead">La historia nacional conserva el origen de la comunidad quequense y el desarrollo de sus símbolos. Las fechas y acontecimientos oficiales se incorporarán a medida que sean establecidos en el registro histórico nacional.</p></div>
+  <div class="timeline">
+    <div class="event"><b>Origen</b><p>Formación de la identidad quequense y de sus primeras expresiones comunitarias.</p></div>
+    <div class="event"><b>Identidad nacional</b><p>Adopción de un nombre, un lema y símbolos propios para representar a Quequenlandia.</p></div>
+    <div class="event"><b>Etapa institucional</b><p>Organización del portal nacional y recopilación de documentos, tradiciones y comunicados.</p></div>
+  </div>
+  <p class="callout" style="margin-top:22px">Este registro es una estructura histórica inicial. No asigna fechas ni acontecimientos que todavía no hayan sido confirmados.</p>
+</section>
+<section class="section" id="territorio">
+  <div class="section-head"><div class="kicker">03 · Territorio nacional</div><h2>Territorio y organización</h2><p class="lead">El territorio constituye el espacio de referencia de la nación quequense. La delimitación, las localidades y la división administrativa se publicarán aquí cuando exista una definición oficial.</p></div>
+  <div class="grid">
+    <article class="tile"><h3>Capital</h3><p>Sede prevista de las instituciones nacionales. Nombre oficial pendiente de incorporación.</p></article>
+    <article class="tile"><h3>División territorial</h3><p>Provincias, distritos o regiones: información pendiente de definición.</p></article>
+    <article class="tile"><h3>Mapa nacional</h3><p>El mapa oficial se añadirá cuando se establezcan los límites y las localidades.</p></article>
+  </div>
+</section>
+<section class="section" id="simbolos">
+  <div class="section-head"><div class="kicker">04 · Emblemas del Estado</div><h2>Símbolos nacionales</h2><p class="lead">Los símbolos representan la soberanía, la prosperidad y la identidad de Quequenlandia.</p></div>
+  <div class="two-col">
+    <div class="grid">
+      <article class="tile"><h3>Azul</h3><p>Representa la grandeza.</p></article>
+      <article class="tile"><h3>Blanco</h3><p>Representa a los habitantes y la pureza.</p></article>
+      <article class="tile"><h3>Sol dorado</h3><p>Representa la prosperidad.</p></article>
+      <article class="tile"><h3>Q coronada y laureles</h3><p>La Q coronada representa la soberanía; los laureles expresan la superioridad geopolítica.</p></article>
+    </div>
+    <img class="seal" src="escudo.svg" alt="Escudo de Quequenlandia">
+  </div>
+</section>
+<section class="section" id="gobierno">
+  <div class="section-head"><div class="kicker">05 · Organización del Estado</div><h2>Gobierno e instituciones</h2><p class="lead">La estructura institucional establece las funciones públicas y conserva la documentación oficial. Los cargos, autoridades y organismos concretos se publicarán una vez definidos.</p></div>
+  <div class="grid">
+    <article class="tile"><div class="symbol">Ⅰ</div><h3>Poder Ejecutivo</h3><p>Conducción y administración de los asuntos nacionales.</p></article>
+    <article class="tile"><div class="symbol">Ⅱ</div><h3>Poder Legislativo</h3><p>Elaboración y tratamiento de las normas nacionales.</p></article>
+    <article class="tile"><div class="symbol">Ⅲ</div><h3>Poder Judicial</h3><p>Interpretación de las normas y resolución de controversias.</p></article>
+    <article class="tile"><div class="symbol">◎</div><h3>Organismos públicos</h3><p>Áreas administrativas y culturales al servicio de la comunidad.</p></article>
+  </div>
+</section>
+<section class="section" id="cultura">
+  <div class="section-head"><div class="kicker">06 · Patrimonio</div><h2>Cultura quequense</h2><p class="lead">La cultura nacional reúne las expresiones, costumbres y celebraciones que construyen la identidad compartida.</p></div>
+  <div class="grid">
+    <article class="tile"><h3>El queque</h3><p>Emblema cultural central y referencia del nombre y la identidad nacional.</p></article>
+    <article class="tile"><h3>Música nacional</h3><p>El himno constituye una de las expresiones musicales representativas.</p></article>
+    <article class="tile"><h3>Patrimonio</h3><p>Este espacio reunirá celebraciones, relatos, tradiciones y archivos históricos.</p></article>
+  </div>
+</section>
+<section class="section" id="himno">
+  <div class="section-head"><div class="kicker">07 · Música nacional</div><h2>Himno de Queque</h2><p class="lead">La expresión musical de la identidad quequense.</p></div>
+  <div class="anthem">
+    <div class="anthem-title"><img src="escudo.svg" alt=""><div><strong>Himno de Queque</strong><small>Grabación oficial · reproducción continua</small></div></div>
+    <audio id="anthemAudio" class="anthem-audio" autoplay loop preload="auto"><source src="Himno%20del%20queque.mp3" type="audio/mpeg">Tu navegador no puede reproducir audio HTML5.</audio>
+    <small id="audioStatus">Volumen 50% · reproducción en bucle.</small>
+  </div>
+</section>
+<section class="section" id="documentos">
+  <div class="section-head"><div class="kicker">08 · Archivo oficial</div><h2>Constitución y documentos</h2><p class="lead">El archivo nacional reunirá las normas fundamentales, actas y disposiciones que sean aprobadas para Quequenlandia.</p></div>
+  <article class="tile document"><div><strong>Constitución de Quequenlandia</strong><p>Texto oficial todavía no incorporado.</p></div><span class="status">En preparación</span></article>
+  <article class="tile document" style="margin-top:12px"><div><strong>Registro de símbolos nacionales</strong><p>Bandera, escudo y lema nacional.</p></div><span class="status">Publicado</span></article>
+</section>
+<section class="section" id="noticias">
+  <div class="section-head"><div class="kicker">09 · Comunicados</div><h2>Noticias nacionales</h2><p class="lead">Novedades y publicaciones del portal institucional.</p></div>
+  <article class="tile"><div class="kicker">Comunicado · 20 de noviembre de 2026</div><h3>Ampliación del Portal Nacional</h3><p>El sitio incorpora nuevas secciones dedicadas a la historia, el territorio, las instituciones y el patrimonio cultural de Quequenlandia.</p></article>
+</section>
+</main>
+<footer><img src="escudo.svg" alt=""><p><strong>QUEQUENLANDIA</strong></p><p>Portal nacional · Unidad, identidad y queque.</p><p style="font-size:.78rem;color:#aebce9;margin-top:12px">Sitio institucional de carácter informativo.</p></footer>
 <script>
-const anthem=document.getElementById("anthemAudio");
-if(anthem){
-  anthem.volume=0.5;
-  anthem.loop=true;
-  const startAnthem=()=>anthem.play().catch(()=>{});
-  startAnthem();
-  const unlockPlayback=()=>{
-    startAnthem();
-    document.removeEventListener("pointerdown",unlockPlayback);
-    document.removeEventListener("keydown",unlockPlayback);
-  };
-  document.addEventListener("pointerdown",unlockPlayback,{once:true});
-  document.addEventListener("keydown",unlockPlayback,{once:true});
-  anthem.addEventListener("ended",()=>{anthem.currentTime=0;startAnthem();});
-  anthem.addEventListener("pause",()=>{
-    if(!anthem.ended && !document.hidden) setTimeout(()=>{if(anthem.paused) startAnthem();},150);
-  });
-}
-</script></body></html>
+(() => {
+ const audio=document.getElementById("anthemAudio");
+ if(!audio) return;
+ audio.volume=0.5;
+ audio.loop=true;
+ const play=()=>audio.play().catch(()=>{});
+ play();
+ const unlock=()=>play();
+ document.addEventListener("pointerdown",unlock,{once:true});
+ document.addEventListener("keydown",unlock,{once:true});
+ audio.addEventListener("ended",()=>{audio.currentTime=0;play();});
+ audio.addEventListener("pause",()=>{if(!document.hidden) setTimeout(()=>{if(audio.paused) play();},250);});
+})();
+</script>
+</body>
+</html>
