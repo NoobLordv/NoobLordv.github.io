@@ -24,7 +24,26 @@ footer{background:#071d70;color:#e8edff;padding:30px max(5vw,22px);text-align:ce
 <section class="section" id="nacion"><div class="kicker">01 · Identidad nacional</div><h2>La nación quequense</h2><p class="lead">Quequenlandia es una nación fundada sobre la identidad compartida de su pueblo. Este portal reúne sus símbolos, instituciones y expresiones culturales en un único espacio oficial.</p><div class="grid"><article class="tile"><div class="symbol">Q</div><h3>Nombre oficial</h3><p>Quequenlandia</p></article><article class="tile"><div class="symbol">⚑</div><h3>Lema nacional</h3><p>Unidad, identidad y queque.</p></article><article class="tile"><div class="symbol">★</div><h3>Capital</h3><p>Capital nacional — sede de las instituciones quequenses.</p></article></div></section>
 <section class="section" id="simbolos"><div class="kicker">02 · Emblemas</div><h2>Símbolos nacionales</h2><p class="lead">La bandera de Quequenlandia expresa la identidad nacional mediante sus colores y emblemas.</p><div class="grid"><article class="tile"><h3>Azul</h3><p>Representa la grandeza.</p></article><article class="tile"><h3>Blanco</h3><p>Representa a los habitantes y la pureza.</p></article><article class="tile"><h3>Sol dorado</h3><p>Representa la prosperidad.</p></article><article class="tile"><h3>Corona y laureles</h3><p>La Q coronada representa la soberanía; los laureles expresan la superioridad geopolítica.</p></article></div></section>
 <section class="section" id="instituciones"><div class="kicker">03 · Organización</div><h2>Instituciones de Quequenlandia</h2><p class="lead">La organización nacional se presenta en sus principales áreas institucionales. Los nombres y autoridades podrán ampliarse mediante futuras disposiciones oficiales.</p><div class="grid"><article class="tile"><h3>Gobierno nacional</h3><p>Representación y conducción de los asuntos de Estado.</p></article><article class="tile"><h3>Constitución</h3><p>Marco fundamental para establecer derechos, deberes y organización institucional.</p></article><article class="tile"><h3>Cultura y patrimonio</h3><p>Protección de los símbolos, tradiciones y memoria quequense.</p></article></div></section>
-<section class="section" id="himno"><div class="kicker">04 · Cultura nacional</div><h2>Himno de Queque</h2><p class="lead">La expresión musical de la identidad quequense.</p><div class="anthem"><strong>Himno de Queque</strong><small>Grabación original · duración aproximada: 2:17</small><audio id="anthemAudio" controls loop preload="metadata"><source src="Himno%20del%20queque.mp3" type="audio/mpeg">Tu navegador no puede reproducir audio HTML5.</audio><small id="audioStatus">Reproducción en bucle · volumen 100%. Pulsá reproducir; al terminar, el himno volverá a empezar.</small></div></section>
+<section class="section" id="himno"><div class="kicker">04 · Cultura nacional</div><h2>Himno de Queque</h2><p class="lead">La expresión musical de la identidad quequense.</p><div class="anthem"><strong>Himno de Queque</strong><small>Grabación original · duración aproximada: 2:17</small><audio id="anthemAudio" autoplay loop preload="auto"><source src="Himno%20del%20queque.mp3" type="audio/mpeg">Tu navegador no puede reproducir audio HTML5.</audio><small id="audioStatus">Volumen 50% · reproducción continua. Si tu navegador bloquea el inicio automático, tocá cualquier parte de la página una vez.</small></div></section>
 <section class="section" id="constitucion"><div class="kicker">05 · Marco jurídico</div><h2>Constitución nacional</h2><p class="lead">La sección constitucional queda reservada para el texto aprobado de la Constitución de Quequenlandia. El articulado todavía no fue incorporado a este portal.</p></section><section class="section" id="noticias"><div class="kicker">06 · Comunicados</div><h2>Noticias nacionales</h2><div class="tile"><h3>Portal nacional inaugurado</h3><p>Se publica la primera versión del sitio institucional de Quequenlandia.</p></div></section></main>
 <footer><p><strong>QUEQUENLANDIA</strong> · Portal nacional</p><p>Identidad, soberanía y cultura quequense.</p></footer>
-<script>const anthem=document.getElementById("anthemAudio");if(anthem){anthem.volume=1;anthem.loop=true;anthem.addEventListener("ended",()=>{anthem.currentTime=0;anthem.play().catch(()=>{});});}</script></body></html>
+<script>
+const anthem=document.getElementById("anthemAudio");
+if(anthem){
+  anthem.volume=0.5;
+  anthem.loop=true;
+  const startAnthem=()=>anthem.play().catch(()=>{});
+  startAnthem();
+  const unlockPlayback=()=>{
+    startAnthem();
+    document.removeEventListener("pointerdown",unlockPlayback);
+    document.removeEventListener("keydown",unlockPlayback);
+  };
+  document.addEventListener("pointerdown",unlockPlayback,{once:true});
+  document.addEventListener("keydown",unlockPlayback,{once:true});
+  anthem.addEventListener("ended",()=>{anthem.currentTime=0;startAnthem();});
+  anthem.addEventListener("pause",()=>{
+    if(!anthem.ended && !document.hidden) setTimeout(()=>{if(anthem.paused) startAnthem();},150);
+  });
+}
+</script></body></html>
